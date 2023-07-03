@@ -2,12 +2,12 @@ from misskey import Misskey
 from dotenv import load_dotenv
 import os
 
-from Forcast.generate_text import TextGenerator
+from Forecast.generate_text import TextGenerator
 
 
 def main():
     load_dotenv()
-    HOST = os.environ["HOST"]
+    HOST = os.environ["MISSKEY_INSTANCE"]
     MISSKEY_TOKEN = os.environ["MISSKEY_TOKEN"]
 
     mk = Misskey(HOST, MISSKEY_TOKEN)

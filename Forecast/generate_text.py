@@ -73,7 +73,6 @@ class TextGenerator:
         topic_text = ""
 
         for day, code in zip(times, weather_codes):
-
             date_list = ["月", "火", "水", "木", "金", "土", "日"]
 
             iso_dt = day

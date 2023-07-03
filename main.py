@@ -2,6 +2,7 @@ from misskey import Misskey
 from dotenv import load_dotenv
 import os
 
+from Forecast.JMA import JMA
 from Forecast.generate_text import TextGenerator
 
 
@@ -26,13 +27,15 @@ def main():
     ]
 
     for campus in campus_list:
-        forecast_datum = TextGenerator(
+        forecast_datum = JMA(campus["area_code"])
+
+        text = TextGenerator(
+            data=forecast_datum,
             camplus_name=campus["name"],
-            area_code=campus["area_code"],
             jma_link=campus["jma_link"],
         )
 
-        mk.notes_create(forecast_datum.generate())
+        mk.notes_create(text.generate())
 
 
 if __name__ == "__main__":

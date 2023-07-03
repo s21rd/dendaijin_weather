@@ -6,10 +6,10 @@ from .weather_code_to_text import weather_code_to_text
 class TextGenerator:
     """送信するテキストを整形する"""
 
-    def __init__(self, camplus_name: str, area_code: int, jma_link: str):
+    def __init__(self, data: JMA, camplus_name: str, jma_link: str):
         self.campus_name = camplus_name
         self.jma_link = jma_link
-        self.forecast_data = JMA(area_code)
+        self.forecast_data = data
 
     def generate(self) -> str:
         """送信される本文テキスト"""

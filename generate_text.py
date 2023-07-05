@@ -1,6 +1,6 @@
 import datetime
-from .JMA import JMA
-from .weather_code_to_text import weather_code_to_text
+from JMA import JMA
+from weather_code_to_text import weather_code_to_text
 
 
 class TextGenerator:

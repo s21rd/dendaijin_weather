@@ -2,8 +2,8 @@ from misskey import Misskey
 from dotenv import load_dotenv
 import os
 
-from Forecast.JMA import JMA
-from Forecast.generate_text import TextGenerator
+from JMA import JMA
+from generate_text import TextGenerator
 
 
 def main():

@@ -6,7 +6,7 @@ from JMA import JMA
 from generate_text import TextGenerator
 
 
-def main():
+def main(event, context):
     load_dotenv()
     HOST = os.environ["MISSKEY_INSTANCE"]
     MISSKEY_TOKEN = os.environ["MISSKEY_TOKEN"]
@@ -33,9 +33,11 @@ def main():
             data=forecast_datum,
             camplus_name=campus["name"],
             jma_link=campus["jma_link"],
-        )
+        ).generate()
 
-        mk.notes_create(text.generate())
+        print(text)
+
+        mk.notes_create(text)
 
 
 if __name__ == "__main__":
